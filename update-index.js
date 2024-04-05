@@ -141,83 +141,88 @@ body {
   width: 100%;
   overflow-y: scroll;
 }
+h2 { margin-top: 1.5em }
 body, p, h1, h2, ul, li { text-align: center }
 table {
   overflow: hidden;
   width: 100%;
   table-layout: fixed;
   max-width: 60em;
-  margin: 0 auto;
+  margin: 0 auto 4em;
 }
 
-tr, .cata {
-  width: 100%;
-}
-.bracket, .faction {
-  text-align: center;
-}
-.cat {
-  text-align: right;
-}
+tr, .cata { width: 100% }
+.bracket, .faction { text-align: center }
+.cat { text-align: right }
 td, th {
   word-break: keep-all;
   white-space: nowrap;
   padding: 0 0.5em 0 0;
 }
+th { text-align: center }
+tbody tr:nth-child(even) { background-color: #181716 }
 
-tbody tr:nth-child(odd) {
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space-evenly;
   background-color: #181716;
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 2em;
 }
+
+.filters > div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  user-select: none;
+}
+
+.filters b { color: var(--clink) }
 
   </style>
 </head>
-<h1>Grandfathered Items WotLK -> Cata</h1>
-<p>
-  List made by abihaj, find the source data here:
-  <ul>
-    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Qb8tqIyiSCoRK7u3UkC50GOUax53ZoHyM8ZgJITXwhmMKrWzJdr_V7a6aUh0rEGCfI4vnESLqicb/pubhtml">19s grandfathered list</a></li>
-    <li><a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/e/2PACX-1vT8TGOVLdVFmTbkmhKJ7lKoNmBRKX-N2J0w0eFYxH1FgWhnU5iERxggnhdUD4HVxlM7ZgDmpXTp899Z/pubhtml&sa=D&source=editors&ust=1712062764717246&usg=AOvVaw2bQD_N0NARZ7Ay19B65Ry-">29s grandfathered list</a></li>
-    <li><a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/e/2PACX-1vSEcTaqNdsolg4cic8AHihB3xTSw3KEyoesCZTsoux9bQlJIw4DR5vpyGXruNx2aWPbzjwlFTfI6kSc/pubhtml&sa=D&source=editors&ust=1712062764717150&usg=AOvVaw02vDDx72VmGgBOF8Cw6gJo">39s grandfathered list</a></li>
-  </ul>
-  Follow him on twitch: <a href="">https://www.twitch.tv/abihaj</a>
-</p>
-
-<h2>Item list</h2>
-
 <body>
+  <h1>Grandfathered Items WotLK -> Cata</h1>
+  <p>
+    List made by abihaj, find the source data here:
+    <ul>
+      <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-Qb8tqIyiSCoRK7u3UkC50GOUax53ZoHyM8ZgJITXwhmMKrWzJdr_V7a6aUh0rEGCfI4vnESLqicb/pubhtml">19s grandfathered list</a></li>
+      <li><a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/e/2PACX-1vT8TGOVLdVFmTbkmhKJ7lKoNmBRKX-N2J0w0eFYxH1FgWhnU5iERxggnhdUD4HVxlM7ZgDmpXTp899Z/pubhtml&sa=D&source=editors&ust=1712062764717246&usg=AOvVaw2bQD_N0NARZ7Ay19B65Ry-">29s grandfathered list</a></li>
+      <li><a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/e/2PACX-1vSEcTaqNdsolg4cic8AHihB3xTSw3KEyoesCZTsoux9bQlJIw4DR5vpyGXruNx2aWPbzjwlFTfI6kSc/pubhtml&sa=D&source=editors&ust=1712062764717150&usg=AOvVaw02vDDx72VmGgBOF8Cw6gJo">39s grandfathered list</a></li>
+    </ul>
+    Follow him on twitch: <a href="">https://www.twitch.tv/abihaj</a>
+  </p>
+
+  <h2>Item list</h2>
+  <div class="filters">
+    <div>
+      <b>Bracket</b>
+      <label><input type="checkbox" name="bracket.19"> 19</label>
+      <label><input type="checkbox" name="bracket.29"> 29</label>
+      <label><input type="checkbox" name="bracket.39"> 39</label>
+    </div>
+    <div>
+      <b>Armor</b>
+      <label><input type="checkbox" name="cat.Cloth"> Cloth</label>
+      <label><input type="checkbox" name="cat.Leather"> Leather</label>
+      <label><input type="checkbox" name="cat.Mail"> Mail</label>
+    </div>
+    <div>
+      <b>Category</b>
+      <label><input type="checkbox" name="cat.Weapons, OHs, shields, wands"> Weapons, OHs, shields, wands</label>
+      <label><input type="checkbox" name="cat.Trinkets, necks, rings"> Trinkets, necks, rings</label>
+    </div>
+    <div>
+      <b>Faction</b>
+      <label><input type="checkbox" name="faction.A/H"> <img src="https://wow.zamimg.com/images/icons/alliance.png"> / <img src="https://wow.zamimg.com/images/icons/horde.png"></label>
+      <label><input type="checkbox" name="faction.A"> <img src="https://wow.zamimg.com/images/icons/alliance.png"></label>
+      <label><input type="checkbox" name="faction.H"> <img src="https://wow.zamimg.com/images/icons/horde.png"></label>
+    </div>
+  </div>
   <table>
-    <thead><tr>
-      <th>WotLK</th>
-      <th>Cata</th>
-      <th>
-        <select id="bracket">
-          <option value="" default>Any</option>
-          <option value="19">19</option>
-          <option value="29">29</option>
-          <option value="39">39</option>
-        </select>
-      </th>
-      <th>
-        <select id="faction">
-          <option value="" default>Any</option>
-          <option value="A">Alliance only</option>
-          <option value="H">Horde only</option>
-          <option value="A/H">Both only</option>
-        </select>
-      </th>
-      <th>
-        <select id="cat">
-          <option value="" default>Any</option>
-          <option value="Cloth">Cloth</option>
-          <option value="Leather">Leather</option>
-          <option value="Mail">Mail</option>
-          <option value="Weapons, OHs, shields, wands">Weapons, OHs, shields, wands</option>
-          <option value="Trinkets, necks, rings">Trinkets, necks, rings</option>
-        </select>
-      </th>
-    </tr></thead>
-    <tbody>${tbodyHTML.join('\n')}</tbody>
-  </table>
+  <table><tbody>${tbodyHTML.join('\n')}</tbody></table>
 <script>
 globalThis.whTooltips = {
   colorLinks: true,
@@ -230,34 +235,33 @@ globalThis.whTooltips = {
 const tbody = document.getElementsByTagName('tbody')[0]
 const items = [...document.querySelectorAll('tbody tr')]
 const initialParams = new URLSearchParams(location.search)
-const filters = {
-  faction: initialParams.get('faction') || '',
-  bracket: initialParams.get('bracket') || '',
-  cat:     initialParams.get('cat')     || '',
-}
+const filters = new Set()
 const applyFilters = () => {
-  const filterEntries = Object.entries(filters)
-  history.pushState({}, null, \`?\${new URLSearchParams(filters)}\`)
+  const filtersArr = [...filters]
+  const filterEntries = Map.groupBy(filtersArr.map(f => f.split('.')), entry => entry[0])
+  history.pushState({}, null, \`?\${filtersArr.map(encodeURIComponent).join('&')}\`)
   for (const item of items) {
     let show = true
-    for (const [key, value] of filterEntries) {
-      if (!value) continue
-      if (item.dataset[key] === value) continue
-      show = false
+    for (const [key, values] of filterEntries) {
+      show = values.some(v => item.dataset[key] === v[1])
+      if (!show) break
     }
     if (item.show === show) continue
     item.show = show
   }
   while (tbody.firstChild) tbody.firstChild.remove()
   tbody.append(...items.filter(i => i.show))
-  $WowheadPower.refreshLinks()
+  typeof $WowheadPower !== 'undefined' && $WowheadPower.refreshLinks()
 }
-for (const select of document.getElementsByTagName('select')) {
-  select.oninput = e => {
-    filters[select.id] = select.value
+
+for (const input of document.getElementsByTagName('input')) {
+  input.oninput = e => {
+    filters.has(input.name) ? filters.delete(input.name) : filters.add(input.name)
     applyFilters()
   }
-  select.value = filters[select.id]
+  if (!initialParams.has(input.name)) continue
+  input.checked = true
+  filters.add(input.name)
 }
 applyFilters()
 </script>
