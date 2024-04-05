@@ -221,7 +221,6 @@ tbody tr:nth-child(even) { background-color: #181716 }
       <label><input type="checkbox" name="faction.H"> <img src="https://wow.zamimg.com/images/icons/horde.png"></label>
     </div>
   </div>
-  <table>
   <table><tbody>${tbodyHTML.join('\n')}</tbody></table>
 <script>
 globalThis.whTooltips = {
